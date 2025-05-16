@@ -45,6 +45,7 @@ class MainWidow(QMainWindow):
 
         self.le = QLabel(parent=self)
         self.le.move(QPoint(400, 100))
+        self.le.setFixedSize(QSize(700, 500))
 
         self.label = QLabel(parent=self, text="Здесь будет ваше изображение")
         self.label.move(QPoint(650, 350))
@@ -64,8 +65,8 @@ class MainWidow(QMainWindow):
          self.file_selected = False
 
       self.pixmap = QPixmap(self.fname[0])
+      self.pixmap = self.pixmap.scaled(700, 500, Qt.AspectRatioMode.KeepAspectRatio)
       self.le.setPixmap(self.pixmap)
-      self.le.setFixedSize(QSize(700, 500))
       self.label.setVisible(False)
       self.le.setVisible(True)
     
