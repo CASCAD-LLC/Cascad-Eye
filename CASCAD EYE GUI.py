@@ -14,10 +14,10 @@ class MainWidow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.file_selected = False
-        self.model = YOLO(dir_path + r"\models\yolov8n.pt")
+        self.model = YOLO(dir_path + r"/models/yolov8n.pt")
         self.setFixedSize(QSize(1500, 700))
         self.setWindowTitle("CASCAD EYE")
-        self.setWindowIcon(QIcon(QPixmap(dir_path + r"\icons\icon.png")))
+        self.setWindowIcon(QIcon(QPixmap(dir_path + r"/icons/icon.png")))
         
         self.toolbar = QToolBar(self)
         self.search_btn = QPushButton("Начать обнаружение", self)
@@ -78,11 +78,11 @@ class MainWidow(QMainWindow):
     def model_select(self, idx):
         self.model_selected = self.models[idx]
         if self.model_selected == "YOLO v8N":
-           self.model = YOLO(dir_path + r"\models\yolov8n.pt")
+           self.model = YOLO(dir_path + r"/models/yolov8n.pt")
         elif self.model_selected == "YOLO v11N": 
-           self.model = YOLO(dir_path + r"\models\yolo11n.pt")
+           self.model = YOLO(dir_path + r"/models/yolo11n.pt")
         elif self.model_selected == "YOLO v11X":   
-           self.model = YOLO(dir_path + r"\models\yolo11x.pt")
+           self.model = YOLO(dir_path + r"/models/yolo11x.pt")
         else:
            pass
 
