@@ -91,7 +91,7 @@ class MainWidow(QMainWindow):
            self.wait_label.setVisible(True)
            self.results = self.model(self.fname[0], verbose=False)[0]
            self.save_path = self.results.save(filename=f"RESULT_{Path(self.fname[0]).stem}.png")
-           self.le.setPixmap(QPixmap(f"RESULT_{Path(self.fname[0]).stem}.png"))
+           self.le.setPixmap(QPixmap(f"RESULT_{Path(self.fname[0]).stem}.png").scaled(700, 500, Qt.AspectRatioMode.KeepAspectRatio))
            self.msgbox = QMessageBox(self)
            self.msgbox.setIcon(QMessageBox.Icon.Information)
            self.msgbox.setText(f"Результат сохранён в файл: {self.save_path}")
