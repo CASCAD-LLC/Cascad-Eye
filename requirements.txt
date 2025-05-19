@@ -1,1 +1,2 @@
 ultralytics=8.3.133
+PyQt6=6.9.0
